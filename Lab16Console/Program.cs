@@ -10,18 +10,20 @@ namespace Lab16Console
     {
         static void Main(string[] args)
         {
+
+            // Continue Loop
             bool loop = true;
 
-            Console.WriteLine("Let's locate some primes!\n");
-            Console.WriteLine("This application will find you any prime, in order from the first prime number on.");
+            Console.WriteLine("Let's Locate Some Primes!\n");
+            Console.WriteLine("This Application Will Find You Any Prime, In Order From The First Prime Number On.");
 
             while (loop)
             {
-                Console.Write("Which prime are you looking for? ");
+                Console.Write("Which Prime Are You Looking For?  ");
                 int input = GetRange(1, 100);
                 int primeNumber = countPrimeNumbers(input);
 
-                Console.WriteLine($"The number {input} prime is {primeNumber}.");
+                Console.WriteLine($"The {input} Prime Number is  --->   {primeNumber}");
 
                 if (!GetContinue())
                 {
@@ -31,6 +33,10 @@ namespace Lab16Console
             }
 
         }
+
+
+
+        // Method to Find Out if the Number is Prime
         public static bool isPrime(int number)
         {
             if (number == 1) return false;
@@ -44,6 +50,10 @@ namespace Lab16Console
             }
             return true;
         }
+
+
+
+        // Method to Count the Placement of the Prime Number
         public static int countPrimeNumbers(int input)
         {
             int number;
@@ -56,6 +66,9 @@ namespace Lab16Console
             return number - 1;
         }
 
+
+
+        // Method to Ask User to Continue
         public static bool GetContinue()
         {
             string Continue;
@@ -63,7 +76,7 @@ namespace Lab16Console
             while (true)
             {
                 Console.WriteLine();
-                Console.WriteLine("Do you want to find another prime number? (y/n): ");
+                Console.WriteLine("Do You Want to Find Another Prime Number? (y/n): ");
                 Continue = Console.ReadLine().ToUpper();
                 Console.WriteLine("");
                 if (Continue == "Y")
@@ -81,6 +94,9 @@ namespace Lab16Console
             }
         }
 
+
+
+        // Method to Get Valid Integer
         public static int GetValidInt()
         {
 
@@ -100,6 +116,8 @@ namespace Lab16Console
             }
             return number;
         }
+
+
 
         // Method to Get Input and Validate That Number is Between 0 and 4.
         public static int GetRange(int min, int max)
